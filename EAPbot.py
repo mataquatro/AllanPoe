@@ -11,6 +11,8 @@ def nextword(a):
 
 speech = ''
 
+# In the next iteration, the raw input needs to be changed to permit an input that is based on another input.
+# It is likely that the input will be collected from a Gizmodo article, as the articles will change periodically and give the bot some variability.
 while speech != 'quit':
 	speech = raw_input('>')
 	s = random.choice(speech.split())
