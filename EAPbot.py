@@ -19,13 +19,18 @@ while speech != 'quit':
 	response = speech + ''
 
 	while True:
+		
 		# If the word introduces an error, it will be replaced with a common word, 'bird'.
 		try:
 			neword = nextword(s)
 		except:
 			neword = nextword('bird')
+		
+		# make sure that the generated text is no longer than 140 characters
+		if len(response) >= 140:
+			break
 		response += ' ' + neword
 		s = neword
-		if neword[-1] in ',?!.':
+		if neword[-1] in ',?!.:|':
 			break
 	print response
