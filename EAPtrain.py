@@ -19,7 +19,7 @@ for item in s:
 
 with open('techtext.txt', 'wb') as txt:
 
-	for n in links:
+	for link in links:
 		url = link
 		url = requests.get(url)
 		url = url.text
@@ -30,7 +30,7 @@ with open('techtext.txt', 'wb') as txt:
 			for s in p:
 				try:
 					# Note that the decode() and encode() functions at the end will get rid of the unicode characters that are causing problems.
-					for st in s.string.lstrip().rstrip().lower().replace("|", "").replace(":","").decode('unicode_escape').encode('ascii', 'ignore'):
+					for st in s.string.lstrip().rstrip().lower().replace("|", " ").replace(":"," ").decode('unicode_escape').encode('ascii', 'ignore'):
 						a_text += st
 				except:
 					pass
@@ -40,10 +40,10 @@ with open('techtext.txt', 'wb') as txt:
 		txt.write('\n')
 
 # Next, create a list of all the words in the order they appear in both texts.
-eap = open('the_raven.txt')
+eap = open('EAP_raven.txt')
 giz = open('techtext.txt')
 text = []
-for f in [eap, giz]:
+for f in [giz, eap]:
 	for line in f:
 		for word in line.lstrip().split():
 			text.append(word)
