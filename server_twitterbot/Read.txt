@@ -1,0 +1,3 @@
+# The contents of this file include file paths that will operate on the server at webfaction.
+# files include the required shebang to make scripts executable. 
+# Previous complications with running on the server and executing cronjobs should be resolved.
